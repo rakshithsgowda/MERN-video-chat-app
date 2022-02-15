@@ -1,0 +1,11 @@
+{
+  "name": "discord-clone",
+  "version": "1.0.0",
+  "description": "MERN project with video and audio chatting services with multiple users",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rakshith S",
+  "license": "ISC"
+}
