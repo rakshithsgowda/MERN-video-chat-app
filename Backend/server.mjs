@@ -2,7 +2,6 @@ import express from 'express'
 import http from 'http'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import mongoose from 'mongoose'
 import connectDB from './db/connectDB.js'
 
 dotenv.config()
@@ -12,6 +11,7 @@ app.use(express.json())
 app.use(cors())
 
 const PORT = process.env.PORT || process.env.API_PORT
+const server = http.createServer(app)
 
 // --------------------------------------------------------------------------------
 // initailaize app with db connect
