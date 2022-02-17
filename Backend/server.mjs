@@ -1,17 +1,20 @@
+import 'dotenv/config'
 import express from 'express'
 import http from 'http'
 import cors from 'cors'
-import dotenv from 'dotenv'
 import connectDB from './db/connectDB.js'
 
-dotenv.config()
 const app = express()
+
+import router from './routes/authRoute.js'
 
 app.use(express.json())
 app.use(cors())
 
 const PORT = process.env.PORT || process.env.API_PORT
 const server = http.createServer(app)
+
+app.use('/api/auth/', router)
 
 // --------------------------------------------------------------------------------
 // initailaize app with db connect
