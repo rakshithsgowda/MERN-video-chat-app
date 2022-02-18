@@ -24,7 +24,7 @@ const authRegister = async (req, res) => {
     const token = 'this is a fake token'
 
     // on validation and password hashing and storing user info - succesfull retrun details
-    res.status(201).send({
+    return res.status(201).send({
       userDeatils: {
         mail: user.mail,
         token,
@@ -32,7 +32,7 @@ const authRegister = async (req, res) => {
       },
     })
   } catch (error) {
-    res.status(500).send('Error occured. PLease try again')
+    return res.status(500).send('Error occured. PLease try again')
   }
 }
 export default authRegister
