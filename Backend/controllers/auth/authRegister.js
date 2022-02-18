@@ -1,5 +1,6 @@
 import User from '../../models/user.js'
 import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 const authRegister = async (req, res) => {
   try {
@@ -21,14 +22,21 @@ const authRegister = async (req, res) => {
       mail: mail.toLowerCase(),
     })
     // create JWT token and retrun it to the client
-    const token = 'this is a fake token'
+    const token = jwt.sign(
+      {
+        userId: user._id,
+        mail,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: '24h' }
+    )
 
     // on validation and password hashing and storing user info - succesfull retrun details
     return res.status(201).send({
-      userDeatils: {
+      userDetails: {
         mail: user.mail,
-        token,
         username: user.username,
+        token,
       },
     })
   } catch (error) {
