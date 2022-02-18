@@ -9,7 +9,7 @@ import { authLogin, authRegister } from '../controllers/auth/index.js'
 const validator = createValidator()
 
 const registerSchema = Joi.object({
-  name: Joi.string().required().min(3).max(8),
+  username: Joi.string().required().min(3).max(8),
   mail: Joi.string().email().required(),
   password: Joi.string().required().min(3).max(8),
 })

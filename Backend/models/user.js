@@ -1,9 +1,8 @@
 import mongoose from 'mongoose'
-const { Schema } = 'mongoose'
 
-const userSchema = new Schema({
-  mail: { type: String, unique: true },
+const userSchema = new mongoose.Schema({
   username: { type: String },
+  mail: { type: String, unique: true },
   password: { type: String },
 })
 
