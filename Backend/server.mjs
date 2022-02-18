@@ -21,12 +21,13 @@ app.use('/api/auth/', router)
 // --------------------------------------------------------------------------------
 const start = async () => {
   try {
-    await connectDB(
-      process.env.MONGO_URI.replace(
-        '<password>',
-        process.env.MONGO_URI_PASSWORD
-      )
-    )
+    // await connectDB(
+    //   process.env.MONGO_URI.replace(
+    //     '<password>',
+    //     process.env.MONGO_URI_PASSWORD
+    //   )
+    // )
+    await connectDB(process.env.MONGO_URI_LOCAL)
     app.listen(PORT, () => {
       console.log(`Hi from port ${PORT}`)
     })
