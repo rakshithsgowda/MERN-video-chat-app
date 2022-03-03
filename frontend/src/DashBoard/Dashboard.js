@@ -1,5 +1,7 @@
+import AuthBox from '../shared/components/AuthBox'
+
 const Dashboard = () => {
-  return <div>Dashboard</div>
+  return <AuthBox>Dashboard</AuthBox>
 }
 
 export default Dashboard
